@@ -1,4 +1,5 @@
 /* hello-time.go from https://github.com/wilsonmar/golang-sample
+   and in Go Playpen: https://play.golang.org/p/v3BElaaAbM
    A tutorial for first-time developers of GoLang.
 */
 
@@ -78,7 +79,7 @@ func main() {
     // BLAH: Duration objections do not have Days() due to timezones and daylight savings time.
     // Time Addition/Subtraction returns a Duration object
     diff_xmas := int(diff_now.Hours() / 24)
-  	fmt.Println("Add",diff_xmas,"days until next Midnight Christmas on", then.Format("Monday, Jan 2, 2006"))
+  	fmt.Println("And",diff_xmas,"days until next Midnight Christmas on", then.Format("Monday, Jan 2, 2006"))
     // See https://golang.org/pkg/fmt/
 
     /*

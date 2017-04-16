@@ -16,7 +16,7 @@ This repository contains simple sample code in the Go language.
 
 1. cd into a program's folder.
 
-   ### Hello program
+   ### Build and Run a program
 
    The <strong>hello</strong> program contains an enhanced "hello world" example.
 
