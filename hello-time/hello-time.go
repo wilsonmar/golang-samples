@@ -63,21 +63,19 @@ func main() {
 
 
     // Construct date of next Christmas:
-    // See https://stackoverflow.com/questions/1760757/how-to-efficiently-concatenate-strings-in-go
-  	// Parsing user inputted dates:
-    //   timeLayout = "2006-01-02 15:04 MST"
-    // Construct a date string without error:
-    christmas_text := strconv.Itoa(now.Year()) + "-12-25 00:00:00" // 0:0:0 won't dd.
+    // TODO: Convert milestone_tz (from above) to string
+    christmas_text := strconv.Itoa(now.Year()) + "-12-25 00:00 MST" // 0:0:0 won't dd.
     //christmas_text := "2017-12-26 12:00 MST" // + milestone_tz
-  	// layout := "2/30/2014 11:38am" // underline is "magic" variable compiler ignores
-  	then, err := time.Parse("2006-01-02 15:04:05", christmas_text)
+  	//then, err := time.Parse("2006-01-02 15:04:05", christmas_text)
+    then, err := time.Parse(timeLayout, christmas_text)
   	if err != nil {
   		 fmt.Println(">>> ",err)
        // return  // due to err
   	}
     // Calculate difference in dates from now, made positive:
     diff_now := time.Since(then) * -1
-    // BLAH: Duration objections do not have days due to timezones and daylight savings time.
+    // Go does not allow re-definition of the same variable.
+    // BLAH: Duration objections do not have Days() due to timezones and daylight savings time.
     // Time Addition/Subtraction returns a Duration object
     diff_xmas := int(diff_now.Hours() / 24)
   	fmt.Println("Add",diff_xmas,"days until next Midnight Christmas on", then.Format("Monday, Jan 2, 2006"))
@@ -101,6 +99,15 @@ func main() {
 
     fmt.Printf("\n") // added so new prompt begins from left margin.
 }
-// Sample output containing the default time stamp format:
-// hello, world at 2017-04-16 04:15:35.824976829 -0600 MDT.
+// Sample output: $ go run hello-time.go
+/*
+Go became an open source project on Tue, Nov 10, 2009 at 11:15pm
+That's 2713 days ago
+from now at 2017-04-16 06:56:01.397340297 -0600 MDT (default format)
+RFC850:   Sunday, 16-Apr-17 06:56:01 MDT
+RFC1123:   Sun, 16 Apr 2017 06:56:01 MDT
+That's 1492347361 seconds from midnight, January 1, 1970 ("epoch time")
+Add 252 days until next Midnight Christmas on Monday, Dec 25, 2017
+Execution time: 312.909µs microseconds
+*/
 // EOF
