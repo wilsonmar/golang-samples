@@ -1,6 +1,9 @@
+//usr/bin/env go run "$0" "$@"; exit
+
 /* hello-time.go from https://github.com/wilsonmar/golang-sample
    and in Go Playpen: https://play.golang.org/p/v3BElaaAbM
    A tutorial for first-time developers of GoLang.
+	 See https://coderwall.com/p/_kdjzq/go-run-run-go-as-a-script-language
 */
 
 // All Go programs must be part of a package.

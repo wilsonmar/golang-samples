@@ -1,5 +1,5 @@
 /* utf8.go in https://github.com/wilsonmar/golang-samples
-   Provides examples of handling Asian characters encoded in UTF-8.
+   Provides examples of counting and comparing Asian characters encoded in UTF-8.
    Provides an illustration of fmt.Print() vs. fmt.Println() with escapted double-quotes.
    Provides an example of using range.
    Adapted from https://coderwall.com/p/k7zvyg/dealing-with-unicode-in-go
