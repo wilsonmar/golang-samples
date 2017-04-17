@@ -1,5 +1,5 @@
 /* latlong.go
-   Manages latitudes and longitudes in a map containing a key-value structure.
+   Manages latitudes and longitudes in a map data type containing a key-value structure.
    Uses Go map functionality.
    Uses float64
    Uses function to do repeated lookups
@@ -28,10 +28,11 @@ func main() {
 
 	// Lookup by key:
     // key := "Bell Labs"
-    key := "Taj Mahal"
+  key := "Taj Mahal"
 	fmt.Println(key,"is at Longitude,Latitude",m[key])
-	//LatLong(key)
+	//LatLong("Bell Labs")
 	//LatLong("Taj Mahal")
+	//LatLong("Machu Pichu")
 }
 
 // See https://github.com/mkaz/working-with-go/blob/master/04-functions.go
