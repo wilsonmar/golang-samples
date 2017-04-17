@@ -82,8 +82,10 @@ func main() {
     // Go does not allow re-definition of the same variable.
     // BLAH: Duration objections do not have Days() due to timezones and daylight savings time.
     // Time Addition/Subtraction returns a Duration object
-    diff_xmas := int(diff_now.Hours() / 24)
-  	fmt.Println("And",diff_xmas,"days until next Midnight Christmas on", then.Format("Monday, Jan 2, 2006"))
+    //diff_xmas_hours := int(diff_now.Hours())
+		diff_xmas_days  := int(diff_now.Hours() / 24)  // 24 hours in a day.
+		// TODO: Calculate number of hours remaining from days.
+  	fmt.Println("And",diff_xmas_days,"days until next Midnight Christmas on", then.Format("Monday, Jan 2, 2006"))
     // See https://golang.org/pkg/fmt/
 
     /*
