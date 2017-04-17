@@ -3,21 +3,24 @@
    This makes use of sync for goroutines.
    A goroutine is a function that is capable of running concurrently with other functions.
    Channels provide a way for goroutines to communicate with one another so they can synchronize their execution.
-   TODO: See https://www.golang-book.com/books/intro/10 and https://www.golang-book.com/books/intro/13#section9
+   See tutorials https://tour.golang.org/concurrency/1
+   and https://www.golang-book.com/books/intro/10 and https://www.golang-book.com/books/intro/13#section9
 */
 
 package main
 
 import (
     "fmt"
-    "sync"
+    "sync" // to synchronize access to memory shared by Goroutines using the same address space
 )
 
 const N = 10  // 10 channels.
 
 func main() {
-    // Make a new channel "chan" (which is an integer) for goroutines to communicate:
+    // Make a new buffered channel named "ch" using the "chan" type which is an integer for goroutines to communicate:
     ch := make(chan int, N)
+    // Sends to a buffered channel block only when the buffer is full. Receives block when the buffer is empty.
+
     // A wait group waits for a collection of goroutines to finish:
     var wg sync.WaitGroup  // see https://golang.org/pkg/sync/#WaitGroup
     for i := 0; i < N; i++ {
@@ -28,13 +31,18 @@ func main() {
             // Each of the goroutines runs and calls Done when finished.
             defer wg.Done()
             for i := 0; i < N; i++ {
+                // Channels are a typed conduit through which you can send and receive values with the channel operator, <-.
+                // Send n to a channel named ch (data flows in the direction of the arrow):
                 ch <- n*N + i
             }
         }(i)
     }
     go func() { // At the same time, Wait is used to block until all goroutines have finished.
         wg.Wait()
-        close(ch)
+        close(ch) // Only the sender should close a channel, never the receiver.
+        // Sending on a closed channel will cause a panic.
+        // Channels aren't like files; you don't usually need to close them.
+        // Closing is only necessary when the receiver must be told there are no more values coming, such as to terminate a range loop.
     }()
     for i := range ch {
         fmt.Println(i)
