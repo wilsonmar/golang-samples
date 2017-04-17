@@ -9,7 +9,9 @@ import ( // packages:
 )
 
 func main() {
+    // Define a bunch of prime numbers:
     primes := []int{2, 3, 5, 7, 11, 13, 17, 19, 23}
+    // Add another item:
     primes = append(primes, 29)
 
     fmt.Println("Example of a switch referencing a slice:")

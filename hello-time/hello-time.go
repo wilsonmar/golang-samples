@@ -9,8 +9,12 @@ package main
 
 // import libraries:
 // fmt provides basic standard out formatting functions.
-import("fmt"; "time"; "strconv") // notice semicolons are used. see https://golang.org/pkg/time/
-//import("fmt"; "time"; "strings") // notice semicolons are used. see https://golang.org/pkg/time/
+import ( // PROTIP: avoid errors with semicolons vs. commas by using a list:
+	"fmt"
+	"strconv" // notice semicolons are used. see https://golang.org/pkg/time/
+	"time"    // see https://golang.org/pkg/time/
+       // "strings"
+)
 
 const (
     // For use with http://golang.org/pkg/time/#Parse
@@ -23,7 +27,7 @@ var runtime_start  = time.Now() // See: http://golang.org/pkg/time/
 // A function must match the package name to
 // provide an entry point which gets called when run:
 func main() {
-    // Four character indent.
+    // Four character indent. gofmt indents using tabs that take 8 characters.
 
   	// Go requires a time zone when specifying a date, so build one:
   	milestone_tz, _ := time.LoadLocation("MST") // You can also use time.UTC constant
