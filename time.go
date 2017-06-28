@@ -4,6 +4,7 @@
    and in Go Playpen: https://play.golang.org/p/v3BElaaAbM
    A tutorial for first-time developers of GoLang.
 	 See https://coderwall.com/p/_kdjzq/go-run-run-go-as-a-script-language
+   https://greatercommons.com/learn/6600110066630656 on time/date
 */
 
 // All Go programs must be part of a package.

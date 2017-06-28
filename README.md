@@ -1,4 +1,7 @@
-This repository contains simple sample code in the Go language.
+This repository (https://github.com/wilsonmar/golang-samples)
+contains simple sample code in the Go language.
+
+See https://wilsonmar.github.io/golang
 
 1. It would be an honor for me if you click the Star icon.
 

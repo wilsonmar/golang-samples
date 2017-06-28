@@ -5,6 +5,8 @@
    similar to Go’s normal HTTP server. The test server creates a server that listens locally on a random port.
    https://github.com/Automattic/go/tree/master/jaguar
 */
+package main
+
     func TestGetParams(t *testing.T) {
 
         // echoHandler, passes back form parameter p

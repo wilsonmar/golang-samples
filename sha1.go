@@ -14,6 +14,7 @@ import (
 func main() {
   // Define flags (command line arguments):
   clear_text := flag.String("text", "text", "the text to be hashed") // "some text" is the default if flag is not added with run.
+  fmt.Println(clear_text)
   // Parse through command line arguments from the go run command:
   flag.Parse()
 
@@ -21,6 +22,7 @@ func main() {
   h.Write([]byte("test"))
   bs := h.Sum([]byte{})
   fmt.Println(bs)
+
 }
 /* Respoonse to go run sha1.go -text="hello"
 */

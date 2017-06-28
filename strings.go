@@ -11,38 +11,38 @@ import (
 
 func main() {
   fmt.Println(
-    // true
     strings.Contains("test", "es"),
+    // true
 
-    // 2
     strings.Count("test", "t"),
+    // 2
 
-    // true
     strings.HasPrefix("test", "te"),
-
     // true
+
     strings.HasSuffix("test", "st"),
+    // true
 
-    // 1
     strings.Index("test", "e"),
+    // 1
 
-    // "a-b"
     strings.Join([]string{"a","b"}, "-"),
+    // "a-b"
 
-    // == "aaaaa"
     strings.Repeat("a", 5),
+    // == "aaaaa"
 
-    // "bbaa"
     strings.Replace("aaaa", "a", "b", 2),
+    // "bbaa"
 
-    // []string{"a","b","c","d","e"}
     strings.Split("a-b-c-d-e", "-"),
+    // []string{"a","b","c","d","e"}
 
-    // "test"
     strings.ToLower("TEST"),
+    // "test"
 
-    // "TEST"
     strings.ToUpper("test"),
+    // "TEST"
   )
 }
 
