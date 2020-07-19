@@ -22,7 +22,7 @@ import ( // PROTIP: avoid errors with semicolons vs. commas by using a list:
 
 const (
     // For use with http://golang.org/pkg/time/#Parse
-    timeLayout = "2006-01-02 15:04 MST"
+    timeLayout = "2020-01-02 15:04 MST"
 )
 
 // The one of a few reasons for a global variable:
