@@ -1,0 +1,23 @@
+.DS_Store
+
+# From https://github.com/github/gitignore/blob/master/Go.gitignore
+# Binaries for programs and plugins
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+
+# From https://go.googlesource.com/go/+/master/.gitignore
+*.pyc
+*.orig
+.*.swp
+
+# Test binary, built with `go test -c`, such as gotesting.test:
+*.test
+
+# Output of the go coverage tool, specifically when used with LiteIDE, such as profile.out:
+*.out
+
+# Dependency directories (remove the comment below to include it)
+vendor/
